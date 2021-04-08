@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<component name="org.nuxeo.ecm.platform.thumbnail.convert.soffice-thumbnail-converters.override">
+
+  <require>org.nuxeo.ecm.platform.thumbnail.convert.soffice-thumbnail-converters</require>
+
+  <extension point="converter" target="org.nuxeo.ecm.core.convert.service.ConversionServiceImpl">
+  
+<!-- adding source MIME types to existing converter -->  
+    <converter name="OfficeToOriginalThumbnail">
+      <sourceMimeType>application/vnd.ms-powerpoint</sourceMimeType>
+    </converter>
+  </extension>
+
+</component>

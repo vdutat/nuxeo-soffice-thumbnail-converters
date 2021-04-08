@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<component name="org.nuxeo.ecm.platform.thumbnail.convert.soffice-thumbnail-converters">
+
+  <extension point="command" target="org.nuxeo.ecm.platform.commandline.executor.service.CommandLineExecutorComponent">
+  
+    <!-- This command produces an image of the first page -->
+    <command enabled="true" name="sofficetothumbnail">
+      <commandLine>soffice</commandLine>
+      <winCommand>soffice.exe</winCommand>
+      <parameterString>--headless --norestore --convert-to #{format} #{sourceFilePath} --outdir #{outDirPath} -env:UserInstallation=#{userInstallation}</parameterString>
+      <testParameterString>--version</testParameterString>
+      <winTestParameterString>--headless --cat test</winTestParameterString>
+      <installationDirective>You need to install LibreOffice and add soffice to the PATH environment variable.
+      </installationDirective>
+    </command>
+  </extension>
+
+  <require>org.nuxeo.ecm.platform.thumbnail.convert</require>
+
+  <extension point="converter" target="org.nuxeo.ecm.core.convert.service.ConversionServiceImpl">
+
+<!-- Override class of existing converter 'anyToThumbnail' -->
+    <converter class="org.nuxeo.ecm.platform.thumbnail.converter.AnyToThumbnailEnhancedConverter" name="anyToThumbnail"></converter>
+
+    <converter class="org.nuxeo.ecm.platform.convert.plugins.LibreOfficeConverter" name="OfficeToOriginalThumbnail">
+      <destinationMimeType>image/png</destinationMimeType>
+      <parameters>
+        <parameter name="CommandLineName">sofficetothumbnail</parameter>
+        <parameter name="format">png</parameter>
+      </parameters>
+    </converter>
+    
+    <converter name="OfficeToThumbnail">
+      <conversionSteps>
+        <subconverter>OfficeToOriginalThumbnail</subconverter>
+        <subconverter>pdfAndImageToThumbnail</subconverter>
+      </conversionSteps>
+    </converter>
+
+  </extension>
+
+</component>

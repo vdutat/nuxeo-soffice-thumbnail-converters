@@ -1,0 +1,4 @@
+nuxeo-soffice-thumbnail-converters.target=nxserver
+
+# List of MIME types for which the 'soffice' command will be used to generate the thumbnail, instead od converting the document to a PDF, then generating an image of the first page of the PDF
+nuxeo.thumbnail.soffice.converter.mimetypes=

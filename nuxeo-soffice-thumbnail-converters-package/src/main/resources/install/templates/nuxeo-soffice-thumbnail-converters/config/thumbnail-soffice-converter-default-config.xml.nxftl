@@ -1,0 +1,21 @@
+<#escape x as x?xml>
+<?xml version="1.0"?>
+<#assign mimetypes="${nuxeo.thumbnail.soffice.converter.mimetypes}"?split(",") />
+<component name="org.nuxeo.ecm.platform.thumbnail.convert.soffice-thumbnail-converters.defaultConfig">
+
+  <require>org.nuxeo.ecm.platform.thumbnail.convert.soffice-thumbnail-converters</require>
+
+  <extension point="converter" target="org.nuxeo.ecm.core.convert.service.ConversionServiceImpl">
+    
+    <converter name="OfficeToOriginalThumbnail">
+<#list mimetypes as mimetype>
+  <#if mimetype?trim?length &gt; 0>
+      <sourceMimeType>${mimetype?trim}</sourceMimeType>
+  </#if>
+</#list>
+    </converter>
+
+  </extension>
+
+</component>
+</#escape>

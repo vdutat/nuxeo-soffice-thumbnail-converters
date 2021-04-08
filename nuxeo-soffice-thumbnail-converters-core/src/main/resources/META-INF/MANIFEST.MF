@@ -1,0 +1,9 @@
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Vendor: com.acme.converters
+Bundle-Version: 1.0.0
+Bundle-Name: nuxeo-soffice-thumbnail-converters-core
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.acme.converters.nuxeo-soffice-thumbnail-converters-core;singleton=true
+Nuxeo-Component: OSGI-INF/sofficethumbnailconverters-contrib.xml
