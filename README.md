@@ -32,8 +32,6 @@ nuxeoctl mp-install nuxeo-soffice-thumbnail-converters/nuxeo-soffice-thumbnail-c
 
 ## Configuration
 
-Contribute a **XML extension** in your bundle or define a **Studio XML extension** with the following **XML**:
-
 ### `nuxeo.conf` or configuration template
 
 Here is how to enable the bypass for `.ppt` and `.pptx` in `nuxeo.conf`:
