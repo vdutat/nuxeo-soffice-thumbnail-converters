@@ -25,7 +25,7 @@ public class AnyToThumbnailEnhancedConverter extends AnyToThumbnailConverter {
 
     public static final String OFFICE_TO_ORIGINAL_THUMBNAIL_CONVERTER_NAME = "OfficeToOriginalThumbnail";
 
-    private static final Logger log = LogManager.getLogger(AnyToThumbnailConverter.class);
+    private static final Logger log = LogManager.getLogger(AnyToThumbnailEnhancedConverter.class);
 
     @Override
     public void init(ConverterDescriptor descriptor) {
