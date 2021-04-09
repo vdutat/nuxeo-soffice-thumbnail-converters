@@ -6,7 +6,7 @@ This plugin addresses the issue of generating the **thumbnail** for large **Offi
 
 This plugins provides **converters** that can be used to bypass the **PDF** conversion, and directly generate the **Thumbnail** image using the `soffice` command.
 
-This bypass can be enabled based on the document's **MIME type** by adding it to configuration variable `nuxeo.thumbnail.soffice.converter.mimetypes`, see exmaple below.
+This bypass can be enabled based on the document's **MIME type** by adding it to configuration variable `nuxeo.thumbnail.soffice.converter.mimetypes`, see exmaple below. I.e. if the **MIME type** of the file being imported is found in the configuration variable `nuxeo.thumbnail.soffice.converter.mimetypes`, the conversion bypass will be used. If not, the standard **thumbnail** generation will be used.
 
 ## Requirements
 
